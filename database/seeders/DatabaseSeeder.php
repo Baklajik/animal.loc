@@ -16,12 +16,14 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'SuperAdmin',
-            'email' => 'root@gmail.com',
-            'role' => Role::ADMIN,
-        ]);
+        // User::factory()->create([
+        //     'name' => 'SuperAdmin',
+        //     'email' => 'root@gmail.com',
+        //     'role' => Role::ADMIN,
+        // ]);
 
-        User::factory(10)->create();
+        // User::factory(10)->create();
+
+        $this ->call(CountrySeeder::class);
     }
 }
