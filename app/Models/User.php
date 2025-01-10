@@ -63,4 +63,13 @@ class User extends Authenticatable
 
         return self::query() ->create($data);
     }
+
+    public static function getRegularUsers(){
+       $users = self::query();
+
+       $users->with('address');
+       $users->where('role', Role::USER);
+
+        return $users->get();
+    }
 }
