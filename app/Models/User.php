@@ -53,6 +53,10 @@ class User extends Authenticatable
         ];
     }
 
+    public function address(){
+        return $this->hasOne(Address::class);
+    }
+
     public static function registerUser(RegisterRequest $request){
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);

@@ -34,6 +34,14 @@ class Country extends Model
         return $this->hasMany(City::class);
     }
 
+    public function address(){
+        return $this->hasOne(Address::class);
+    }
+
+    public function addresses(){
+        return $this->hasManyThrough(Address::class, City::class);
+    }
+
     public function __toString(){
         return $this->name;
     }
